@@ -1,0 +1,26 @@
+- 2019-01-14
+  - Email correspondence with M.Pickering, Zubin Duggal & others about LSIF, HIE, Kythe
+    - Wrote Kythe/LSIF comparison gist
+      - https://gist.github.com/robinp/76f9d3d91387da5162f773895d4e1d15
+      - got feedback from Kythe people at https://groups.google.com/forum/#!topic/kythe/ySq83r1JqM0
+      - pinged LSIF issue at https://github.com/Microsoft/language-server-protocol/issues/623#issuecomment-454297184
+    - Personal conclusion:
+      - There's still long-term value in keeping Kythe output
+      - haskell-indexer may migrate to HIE as source (vs direct GHC)
+        - HIE now in ghc HEAD, see 'compiler/hieFile'.
+        - Likely released in GHC 8.8.
+    - took: 1.5 hrs
+  - pykythe
+    - Kythe indexer for Python, experimental.
+      - Would be great if could be ran over Starlark Bazel files.
+        - .. which is a subset of Python syntax (strictly?)
+        - .. so we could have xref'd bzl files, easing development.
+    - Got it to compile
+      - TODO: Need to add nix-expr for reproducible compile.
+      - Entries don't render much in web server.
+        - Peter said some Kythe facts are likely missing.
+        - TODO: Maybe I'll check later if something obvious is missing.
+    - Peter Ludemann (peter.ludemann@gmail.com) will update it in a few weeks
+      with new features.
+      - AI: check back
+    - took: 1.5 hrs
