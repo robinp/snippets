@@ -24,3 +24,34 @@
       with new features.
       - AI: check back
     - took: 1.5 hrs
+
+- 2019-01-15
+  - Update haskell-indexer roadmap.
+    - Opened PR https://github.com/google/haskell-indexer/pull/90.
+    - took: 30 mins
+  - Pondered about representation of polymorphic types in Kythe.
+    - Related to https://github.com/google/haskell-indexer/issues/31.
+    - Devised a scheme that can save duplication and support some type-based
+      searching as well (better than nothing at least).
+      - Will have to run the idea through Kythe team.
+      - see images/kythe_type_share.jpg, need to explain yet.
+    - took: 20 mins
+  - Kythe extractor benefits
+    - Asked on https://groups.google.com/forum/#!topic/kythe/FzC5ni5nNh8
+    - took: 15 mins
+  - Final review for haskell-indexer source-plugin PR.
+    - https://github.com/google/haskell-indexer/pull/89.
+    - Almost good to go.
+    - took: 30 mins
+  - Review Kythe analyzer driver RFC
+    - https://github.com/kythe/kythe/pull/3339
+    - took: 20 mins
+
+- Plan for tomorrow:
+  - Fire up Kythe language server on toy index (say C++), interact with it.
+    - Does it work?
+    - How to map paths recorded in index and paths on a local checkout?
+    - Does it serve comments, type signatures as expected?
+  - Look into indexing with rules_haskell.
+  - Look at indexing nixpkgs.
+    - Check https://github.com/mpickering/haskell-indexer-nix.
