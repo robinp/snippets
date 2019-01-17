@@ -47,7 +47,28 @@
     - https://github.com/kythe/kythe/pull/3339
     - took: 20 mins
 
-- Plan for tomorrow:
+- 2019-01-16
+  - Compare haskell-code-explorer and haskell-indexer
+    - Commented on https://github.com/alexwl/haskell-code-explorer/issues/2
+    - Would be nice to use its UI as a Kythe frontend.
+      - Maybe even make it generic, so it could use either Kythe or LSIF.
+        Pinged the idea to the GSoC thread.
+    - took: 30 mins
+  - Bug: garbage at end of entries file.
+    - https://github.com/google/haskell-indexer/issues/91
+    - Garbage likely added by haskell-indexer?
+    - took: 40 mins
+  - Compile Kythe tools using nixpkgs+Bazel
+    - As an exercise, before launching language server.
+    - With some helper scripts this succeeds, but C++ binaries miss linking
+      against ncurses.
+      - Turns out kythe/third_party/llvm/BUILD has `-lcurses`, not `-lncurses`.
+      - Opened https://github.com/NixOS/nixpkgs/issues/54112.
+    - took: 1.5 hours
+
+- 2019-01-17
+
+- Plan for today
   - Fire up Kythe language server on toy index (say C++), interact with it.
     - Does it work?
     - How to map paths recorded in index and paths on a local checkout?
@@ -55,3 +76,5 @@
   - Look into indexing with rules_haskell.
   - Look at indexing nixpkgs.
     - Check https://github.com/mpickering/haskell-indexer-nix.
+
+- Plan for tomorrow

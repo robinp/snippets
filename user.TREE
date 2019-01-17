@@ -1,0 +1,4 @@
+- 2019-01-16
+  - Track down out of space
+    - 'ncdu' command line tree disk stat.
+    - took: 20 mins
