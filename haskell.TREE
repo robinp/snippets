@@ -67,6 +67,21 @@
     - took: 1.5 hours
 
 - 2019-01-17
+  - Compiling Kythe
+    - Mysterious but non-interesting build error.
+      - See https://gist.github.com/robinp/ea7a1dc0a1ea30b8d80268010ca695f7.
+    - Pushed https://github.com/TreeTide/kythe/tree/nix.
+    - took: 1 hour
+
+- 2019-01-18
+  - Compiling Kythe
+    - More explicit tooling for //kythe/web/ui:prod-js
+    - took: 30 mins
+  - pykythe
+    - xrefs seem to work using Kythe tools built from HEAD.
+      - for https://github.com/kythe/kythe/issues/1725.
+    - see images/pykythe-xrefs.png
+    - took: 10 mins
 
 - Plan for today
   - Fire up Kythe language server on toy index (say C++), interact with it.
