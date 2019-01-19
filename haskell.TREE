@@ -82,6 +82,12 @@
       - for https://github.com/kythe/kythe/issues/1725.
     - see images/pykythe-xrefs.png
     - took: 10 mins
+  - Mysterious Bazel java error revisited
+    - Maybe due to nix reverting jvm_opts but not reverting toolchain?
+      - at https://github.com/NixOS/nixpkgs/blob/59a6ec5568a6b781996abf9f4108f2ce7e4a2397/pkgs/development/tools/build-managers/bazel/default.nix#L147
+    - Filed https://github.com/NixOS/nixpkgs/issues/54289
+      - with it //kythe/release can be built.
+    - took: 2 hours
 
 - Plan for today
   - Fire up Kythe language server on toy index (say C++), interact with it.
