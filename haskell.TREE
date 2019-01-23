@@ -90,6 +90,11 @@
     - Pushed state to https://github.com/TreeTide/kythe/tree/nix.
     - took: 2 hours
 
+- 2019-01-22
+  - Get more familiar with Kythe internals.
+    - PR https://github.com/kythe/kythe/pull/3394 to fix xrefs in Kythe repo.
+    - took: 7 hours
+
 - Plan for today
   - Fire up Kythe language server on toy index (say C++), interact with it.
     - Does it work?
