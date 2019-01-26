@@ -95,6 +95,13 @@
     - PR https://github.com/kythe/kythe/pull/3394 to fix xrefs in Kythe repo.
     - took: 7 hours
 
+- 2019-01-25
+  - Musing with traversals and recursion-schemes.
+    - Triggered discussion at https://mail.haskell.org/pipermail/haskell-cafe/2019-January/130638.html
+    - Maybe recursion-schemes would need some extra combinators in the spirit
+      of fixplate (or at least make it more explicit in docs how to achieve).
+    - took: 2 hours
+
 - Plan for today
   - Fire up Kythe language server on toy index (say C++), interact with it.
     - Does it work?
