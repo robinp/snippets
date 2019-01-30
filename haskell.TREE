@@ -102,15 +102,39 @@
       of fixplate (or at least make it more explicit in docs how to achieve).
     - took: 2 hours
 
+- 2019-01-26
+  - Kythe URIs use `?` as query separator.
+    - Opened https://github.com/kythe/kythe/issues/3406.
+
+- 2019-01-28
+  - Help resolve https://github.com/NixOS/nixpkgs/issues/54289.
+    - took: 30 mins
+
+- 2019-01-30
+  - Started up Kythe language server, made it serve xrefs (for Go now).
+    - Needs a .kythe-settings.json in the workspace root to map vnames to
+      filepaths.
+    - Documentation is not found, likely needs mods to follow the new
+      doc edges?
+      - Found workaround, opened https://github.com/kythe/kythe/issues/3412.
+        - This makes :LspHover work using vim-lsp.
+    - Also, why are out-of-project symbol references not brought back?
+      - Maybe it's only vim-lsp?
+    - took: 3 hours
+  - Looked after how should haskell-indexer extract type and doc info.
+    - Types are well normalized in HIE.
+    - Doc's don't seem to be included in HIE.
+      - Some haddock links where they extract from HIE.
+        - https://github.com/haskell/haddock/issues/715
+        - https://github.com/haskell/haddock/pull/977
+    - took: 30 mins
+
 - Plan for today
-  - Fire up Kythe language server on toy index (say C++), interact with it.
-    - Does it work?
-    - How to map paths recorded in index and paths on a local checkout?
-    - Does it serve comments, type signatures as expected?
 
 - Queue.
+  - Make PoC for haskell-indexer using HIE as backend.
+    - So we can emit types and docs.
   - Look into indexing with rules_haskell.
   - Look at indexing nixpkgs.
     - Check https://github.com/mpickering/haskell-indexer-nix.
-
   - Look at the aspect-based Java extractor mentioned in the roadmap PR.
