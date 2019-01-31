@@ -119,7 +119,12 @@
       - Found workaround, opened https://github.com/kythe/kythe/issues/3412.
         - This makes :LspHover work using vim-lsp.
     - Also, why are out-of-project symbol references not brought back?
-      - Maybe it's only vim-lsp?
+      - They are, just many of them have invalid location due to extraction
+        mapping virtual stuff (external/...) to the main corpus. I guess
+        this trips up vim-lsp.
+        - Fix: make extractor use correct vname for these.
+        - OTOH: should we make this navigable by creating an on-demand tree
+          on the client? Or some virtual filesystem?
     - took: 3 hours
   - Looked after how should haskell-indexer extract type and doc info.
     - Types are well normalized in HIE.
@@ -128,6 +133,16 @@
         - https://github.com/haskell/haddock/issues/715
         - https://github.com/haskell/haddock/pull/977
     - took: 30 mins
+  - Started a kythe-fuse tool, so the editor can open files from the kythe
+    index even if not present at physical locations.
+    - Say generated files, unpacked external repos..
+    - took: 2 hours
+
+- 2019-01-31
+  - Configured Kythe language server, added KytheFS
+    - Now both virtual and physical sources can be navigated through LSP.
+    - Opened PR https://github.com/kythe/kythe/pull/3419.
+    - took: 6 hours
 
 - Plan for today
 
